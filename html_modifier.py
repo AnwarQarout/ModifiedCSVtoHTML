@@ -7,14 +7,16 @@ def read_csv_and_format(input_csv):
     table_data=""
     with open(input_csv, 'r') as file:
         employee_data = csv.reader(file)
+        table_data += "\n\t\t\t"
         for row in employee_data:
-            table_data += "<tr>"
+            table_data += "\t\t" + "<tr>"
             table_data += "<td>"
             list_to_str = str(row[0])
             list_to_str = list_to_str.replace(";", "</td><td>")
             list_to_str += "</td>"
             table_data += list_to_str
             table_data += "</tr>"
+            table_data+="\n\t\t\t"
         return table_data
 
 
